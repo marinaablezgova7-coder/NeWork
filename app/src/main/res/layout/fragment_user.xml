@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF7FF">
+
+    <!-- Верхняя панель -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <ImageButton
+            android:id="@+id/user_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="Назад" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingStart="8dp">
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Имя пользователя"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#29252B" />
+
+            <TextView
+                android:id="@+id/user_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="login"
+                android:textSize="14sp"
+                android:textColor="#77717A" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Вкладки -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/user_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF7FF"
+        app:tabIndicatorColor="#6F4AA8"
+        app:tabSelectedTextColor="#6F4AA8"
+        app:tabTextColor="#77717A">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Стена" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Работы" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <!-- Стена -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/user_wall_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:padding="8dp" />
+
+    <!-- Работы -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/user_jobs_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:padding="8dp"
+        android:visibility="gone" />
+
+</LinearLayout>

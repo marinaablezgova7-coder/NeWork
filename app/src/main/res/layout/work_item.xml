@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_margin="8dp"
+    android:background="#FFF7FF">
+
+    <TextView
+        android:id="@+id/work_company"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Название компании"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#29252B" />
+
+    <TextView
+        android:id="@+id/work_period"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="01 Jan 2020 — 01 Jan 2023"
+        android:textSize="14sp"
+        android:textColor="#77717A" />
+
+    <TextView
+        android:id="@+id/work_position"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Должность"
+        android:textSize="16sp"
+        android:textColor="#29252B" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/work_delete_button"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:text="Удалить"
+        android:textAllCaps="false"
+        android:textColor="#B3261E"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:cornerRadius="10dp" />
+
+</LinearLayout>

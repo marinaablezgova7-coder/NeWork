@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_posts"
+        android:icon="@drawable/ic_posts"
+        android:title="Posts" />
+
+    <item
+        android:id="@+id/navigation_events"
+        android:icon="@drawable/ic_event"
+        android:title="Events" />
+
+    <item
+        android:id="@+id/navigation_users"
+        android:icon="@drawable/ic_group"
+        android:title="Users" />
+
+</menu>

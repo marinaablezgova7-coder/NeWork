@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- Верхняя панель -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/post_details_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="#FFF7FF"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="Post"
+        app:titleTextColor="#222222"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/details_share"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="end|center_vertical"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Поделиться"
+            android:padding="14dp"
+            android:src="@drawable/ic_share" />
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/post_details_toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="24dp">
+
+            <!-- АВТОР -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- Аватар -->
+                <TextView
+                    android:id="@+id/details_avatar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/ic_account_circle"
+                    android:gravity="center"
+                    android:text="L"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/details_author"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Leo Lipshutz"
+                        android:textColor="#222222"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/details_job"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Android Developer"
+                        android:textColor="#555555"
+                        android:textSize="9sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!-- ДАТА -->
+            <TextView
+                android:id="@+id/details_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="28.08.22 19:00"
+                android:textColor="#777777"
+                android:textSize="9sp" />
+
+
+            <!-- ТЕКСТ -->
+            <TextView
+                android:id="@+id/details_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:lineSpacingExtra="2dp"
+                android:text="Шляпа — это головной убор, который носили в Древней Греции. В наше время шляпы носят для защиты от солнца или просто для красоты."
+                android:textColor="#333333"
+                android:textSize="10sp" />
+
+
+            <!-- LIKERS -->
+            <TextView
+                android:id="@+id/details_likers_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Likers"
+                android:textColor="#222222"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:id="@+id/details_likers_container"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- ЛАЙК -->
+                <ImageButton
+                    android:id="@+id/details_like"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Лайк"
+                    android:padding="2dp"
+                    android:src="@drawable/ic_favorite" />
+
+                <!-- КОЛИЧЕСТВО -->
+                <TextView
+                    android:id="@+id/details_likes_count"
+                    android:layout_width="24dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="10"
+                    android:textColor="#6F4AA8"
+                    android:textSize="9sp" />
+
+                <!-- АВАТАРЫ ЛАЙКНУВШИХ -->
+                <LinearLayout
+                    android:id="@+id/details_likers_avatars"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="6dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" />
+
+            </LinearLayout>
+
+
+            <!-- MENTIONED -->
+            <TextView
+                android:id="@+id/details_mentioned_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Mentioned"
+                android:textColor="#222222"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- ИКОНКА ПОЛЬЗОВАТЕЛЕЙ -->
+                <ImageView
+                    android:id="@+id/details_mentioned_icon"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:contentDescription="Упомянутые пользователи"
+                    android:src="@drawable/ic_group" />
+
+                <!-- КОЛИЧЕСТВО -->
+                <TextView
+                    android:id="@+id/details_mentioned_count"
+                    android:layout_width="24dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textColor="#6F4AA8"
+                    android:textSize="9sp" />
+
+                <!-- АВАТАРЫ -->
+                <LinearLayout
+                    android:id="@+id/details_mentioned_avatars"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="6dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

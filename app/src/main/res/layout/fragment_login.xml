@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- ВЕРХНЯЯ ПАНЕЛЬ -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/login_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="#FFF7FF"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="Login"
+        app:titleTextColor="#222222"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ОСНОВНАЯ ОБЛАСТЬ -->
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/login_toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.42">
+
+        <!-- ЛОГИН -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/login_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="Login"
+            app:boxBackgroundMode="filled"
+            app:boxBackgroundColor="#E9E3EC"
+            app:boxStrokeColor="#6F4AA8"
+            app:boxStrokeWidth="1dp"
+            app:hintTextColor="#6F4AA8">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/login_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:textSize="14sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!-- ПАРОЛЬ -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            android:hint="Password"
+            app:boxBackgroundMode="filled"
+            app:boxBackgroundColor="#E9E3EC"
+            app:boxStrokeColor="#6F4AA8"
+            app:boxStrokeWidth="1dp"
+            app:endIconMode="password_toggle"
+            app:hintTextColor="#6F4AA8">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:textSize="14sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!-- КНОПКА ВОЙТИ -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="18dp"
+            android:backgroundTint="#6F4AA8"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:cornerRadius="24dp" />
+
+
+        <!-- РЕГИСТРАЦИЯ -->
+        <TextView
+            android:id="@+id/register_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Don't have an account? Register"
+            android:textColor="#6F4AA8"
+            android:textSize="12sp"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

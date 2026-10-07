@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/post_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:layout_marginStart="4dp"
+    android:layout_marginEnd="4dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="6dp"
+
+    android:clickable="true"
+    android:focusable="true"
+
+    app:cardBackgroundColor="#FFF7FF"
+    app:cardCornerRadius="12dp"
+    app:strokeColor="#D8CEDA"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- АВТОР -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- АВАТАР -->
+            <TextView
+                android:id="@+id/post_avatar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/ic_account_circle"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <!-- ИМЯ + ДАТА -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/post_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Leo Lipshutz"
+                    android:textColor="#222222"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/post_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="21.02.2022 14:23"
+                    android:textColor="#777777"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+            <!-- ТРИ ТОЧКИ -->
+            <ImageButton
+                android:id="@+id/post_menu"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Меню поста"
+                android:padding="6dp"
+                android:src="@drawable/ic_more_vertical" />
+
+        </LinearLayout>
+
+        <!-- ФОТО -->
+        <ImageView
+            android:id="@+id/post_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="Изображение поста"
+            android:scaleType="centerCrop"
+            android:visibility="gone" />
+
+        <!-- ВИДЕО -->
+        <FrameLayout
+            android:id="@+id/post_video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="#222222"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/post_video_preview"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:contentDescription="Превью видео"
+                android:scaleType="centerCrop" />
+
+            <ImageButton
+                android:id="@+id/post_video_play"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:contentDescription="Воспроизвести видео"
+                android:src="@android:drawable/ic_media_play" />
+
+        </FrameLayout>
+
+        <!-- ТЕКСТ ПОСТА -->
+        <TextView
+            android:id="@+id/post_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:lineSpacingExtra="3dp"
+            android:text="Шляпа — это головной убор, который носили в Древней Греции."
+            android:textColor="#333333"
+            android:textSize="14sp" />
+
+        <!-- ССЫЛКА -->
+        <TextView
+            android:id="@+id/post_link_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:autoLink="web"
+            android:clickable="true"
+            android:focusable="true"
+            android:textColor="#6F4AA8"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <!-- ЛАЙК + ПОДЕЛИТЬСЯ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- ЛАЙК -->
+            <ImageButton
+                android:id="@+id/post_like"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Поставить лайк"
+                android:padding="2dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_favorite" />
+
+            <!-- КОЛИЧЕСТВО ЛАЙКОВ -->
+            <TextView
+                android:id="@+id/post_likes_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="10"
+                android:textColor="#6F4AA8"
+                android:textSize="12sp" />
+
+            <!-- ПОДЕЛИТЬСЯ -->
+            <ImageButton
+                android:id="@+id/post_share"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="18dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Поделиться"
+                android:padding="2dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_share" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
